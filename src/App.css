@@ -1,0 +1,10 @@
+.App {
+  text-align: center;
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px #888888;
+  margin: 5%;
+}
+input{
+  padding: 1%;
+}

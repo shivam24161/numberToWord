@@ -1,5 +1,5 @@
-import "./App.css";
 import { useState } from "react";
+import "./App.css";
 
 function App() {
   const [word, setword] = useState("");
@@ -38,14 +38,22 @@ function App() {
     "ninety",
   ];
 
-  const moreThanTens = [" hundred ", "thousand ", " lakh ", " crore"];
+  const moreThanTens = [
+    " hundred ",
+    "thousand ",
+    " lakh ",
+    " crore",
+    "Arab",
+    "Kharab",
+    "Neel",
+    "Padma ",
+  ];
 
   // Function on input value change
   const changeHandler = (e) => {
     let value = e.target.value;
     let count = 0;
     let space = "";
-
     for (let i = value.length - 1; i > -1; i--) {
       // If value is of length 3
       if (count === 3) {
@@ -59,14 +67,12 @@ function App() {
     }
     space = space.split(",");
     let result = "";
-
     for (let i = 0; i < space.length; i++) {
       let temp = space[i].split("");
       temp = temp.reverse();
       temp = temp.toString().replace(",", "");
       if (i === 0) {
         temp = temp.split(",").toString().replace(",", "");
-
         if (Number(temp) < 99) {
           result += getResultUpto100(temp);
         } else {
@@ -101,7 +107,7 @@ function App() {
 
   return (
     <div className="App">
-    <h1>Number to Word</h1>
+      <h1>Number to Word</h1>
       <h5>Please Enter Number</h5>
       <p>
         <input onChange={changeHandler} type="number"></input>{" "}
